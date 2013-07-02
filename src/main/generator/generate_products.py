@@ -1,6 +1,6 @@
 __author__ = 'vvlasov'
 
-max_products = 10
+max_products = 16
 
 package = "package org.jtuples;"
 class_begin = "public class Product{0}<{1}> extends Product"
