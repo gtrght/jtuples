@@ -1,3 +1,5 @@
+package com.othelle.jtuples;
+
 /*
  * =============================================================================
  *
@@ -18,40 +20,55 @@
  * =============================================================================
  */
 
-//GENERATED CODE, DO NOT EDIT
-
-package com.othelle.jtuples;
-
-/**
- * author: v.vlasov
+/*
+ * =============================================================================
+ *   GENERATED CODE DO NOT EDIT
+ * =============================================================================
  */
-public class ProductN<T1, T2, T3> extends Product {
-
+public class Product8<T1, T2, T3, T4, T5, T6, T7, T8> extends Product implements Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>{
     private T1 v1;
     private T2 v2;
     private T3 v3;
+    private T4 v4;
+    private T5 v5;
+    private T6 v6;
+    private T7 v7;
+    private T8 v8;
 
-    public ProductN(T1 v1, T2 v2, T3 v3) {
+    public Product8(T1 v1, T2 v2, T3 v3, T4 v4, T5 v5, T6 v6, T7 v7, T8 v8){
         this.v1 = v1;
         this.v2 = v2;
         this.v3 = v3;
+        this.v4 = v4;
+        this.v5 = v5;
+        this.v6 = v6;
+        this.v7 = v7;
+        this.v8 = v8;
+        this.arity = 8;
     }
 
-
-    @Override
-    public Object getElement(int index) {
-        switch (index) {
+    public Object getElement(int index){
+        switch(index){
             case 0:
                 return v1;
             case 1:
-                return v1;
+                return v2;
             case 2:
-                return v1;
+                return v3;
+            case 3:
+                return v4;
+            case 4:
+                return v5;
+            case 5:
+                return v6;
+            case 6:
+                return v7;
+            case 7:
+                return v8;
             default:
                 throw new IndexOutOfBoundsException("Index is out of range: " + index);
         }
     }
-
     public T1 _1() {
         return v1;
     }
@@ -63,4 +80,23 @@ public class ProductN<T1, T2, T3> extends Product {
     public T3 _3() {
         return v3;
     }
-}
+
+    public T4 _4() {
+        return v4;
+    }
+
+    public T5 _5() {
+        return v5;
+    }
+
+    public T6 _6() {
+        return v6;
+    }
+
+    public T7 _7() {
+        return v7;
+    }
+
+    public T8 _8() {
+        return v8;
+    }}

@@ -25,7 +25,30 @@ package com.othelle.jtuples;
  *   GENERATED CODE DO NOT EDIT
  * =============================================================================
  */
+public class Product2<T1, T2> extends Product implements Tuple2<T1, T2>{
+    private T1 v1;
+    private T2 v2;
 
-public interface Tuple[N]<[TN]> extends Tuple[N-1]<[TN-1]> [
-    T[N] _[N]();
-]
+    public Product2(T1 v1, T2 v2){
+        this.v1 = v1;
+        this.v2 = v2;
+        this.arity = 2;
+    }
+
+    public Object getElement(int index){
+        switch(index){
+            case 0:
+                return v1;
+            case 1:
+                return v2;
+            default:
+                throw new IndexOutOfBoundsException("Index is out of range: " + index);
+        }
+    }
+    public T1 _1() {
+        return v1;
+    }
+
+    public T2 _2() {
+        return v2;
+    }}

@@ -2,7 +2,7 @@ __author__ = 'vvlasov'
 
 import generate_products as gp
 
-package = "package org.jtuples;"
+package = "package com.othelle.jtuples;"
 
 if __name__ == '__main__':
     template = open('Tuples.java', 'rb').read()

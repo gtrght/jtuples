@@ -26,6 +26,6 @@ package com.othelle.jtuples;
  * =============================================================================
  */
 
-public interface Tuple[N]<[TN]> extends Tuple[N-1]<[TN-1]> [
-    T[N] _[N]();
-]
+public interface Tuple5<T1, T2, T3, T4, T5> extends Tuple4<T1, T2, T3, T4> {
+    T5 _5();
+}

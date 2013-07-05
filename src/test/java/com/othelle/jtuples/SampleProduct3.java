@@ -1,9 +1,7 @@
-package com.othelle.jtuples;
-
 /*
  * =============================================================================
  *
- *   Copyright 2013, JTuples team
+ *   Copyright (c) 2013, JTuples
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -19,13 +17,34 @@ package com.othelle.jtuples;
  *
  * =============================================================================
  */
+package com.othelle.jtuples;
 
-/*
- * =============================================================================
- *   GENERATED CODE DO NOT EDIT
- * =============================================================================
+/**
+ * author: v.vlasov
  */
+public class SampleProduct3<T1, T2, T3> extends Product {
+    private T1 v1;
+    private T2 v2;
+    private T3 v3;
 
-public interface Tuple[N]<[TN]> extends Tuple[N-1]<[TN-1]> [
-    T[N] _[N]();
-]
+    public SampleProduct3(T1 v1, T2 v2, T3 v3) {
+        this.v1 = v1;
+        this.v2 = v2;
+        this.v3 = v3;
+        arity = 3;
+    }
+
+    @Override
+    public Object getElement(int index) {
+        switch (index) {
+            case 0:
+                return v1;
+            case 1:
+                return v2;
+            case 2:
+                return v3;
+            default:
+                throw new IndexOutOfBoundsException("Index is out of bounds: " + index + ".");
+        }
+    }
+}

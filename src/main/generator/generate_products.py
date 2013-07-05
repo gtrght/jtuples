@@ -2,8 +2,8 @@ __author__ = 'vvlasov'
 
 max_products = 16
 
-package = "package org.jtuples;"
-class_begin = "public class Product{0}<{1}> extends Product"
+package = "package com.othelle.jtuples;"
+class_begin = "public class Product{0}<{1}> extends Product implements Tuple{0}<{1}>"
 o_bracket = "{"
 c_bracket = "}"
 iob_exception_block = "\n            default:\n                throw new IndexOutOfBoundsException(\"Index is out of range: \" + index);"
@@ -11,12 +11,12 @@ case_block = "\n            case {0}:\n                return v{1};"
 method_block = "\n    public T{0} _{0}() [\n        return v{0};\n    ]"
 
 
-def generate_join(number, join_pattern, join_symbol):
-    return join_symbol.join(map(lambda x: join_pattern.format(x), range(1, number + 1)))
+def generate_join(number, join_pattern, join_symbol, start=1):
+    return join_symbol.join(map(lambda x: join_pattern.format(x), range(start, number + 1)))
 
 
-def generate_types(number):
-    return generate_join(number, "T{0}", ", ")
+def generate_types(number, start=1 ):
+    return generate_join(number, "T{0}", ", ", start)
 
 
 def generate_fields(number):
@@ -25,8 +25,8 @@ def generate_fields(number):
 
 def generate_constructor(number):
     return "    public Product{0}({1}){2}".format(number, generate_join(number, "T{0} v{0}", ", "),
-                                                        "{\n" + generate_join(number, "        this.v{0} = v{0};", "\n") +
-                                                        "\n        " + "this.arity = {0};".format(number)) + "\n    }"
+                                                  "{\n" + generate_join(number, "        this.v{0} = v{0};", "\n") +
+                                                  "\n        " + "this.arity = {0};".format(number)) + "\n    }"
 
 
 def generate_get_element(number):
