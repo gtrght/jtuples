@@ -20,17 +20,31 @@ package com.othelle.jtuples;
  * =============================================================================
  */
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
+import static com.othelle.jtuples.Tuples.convert;
 import static com.othelle.jtuples.Tuples.tuple;
 
 /**
  * author: v.vlasov
  */
 public class MapUtils {
+
+    /**
+     * Flattens map to a list of tuples
+     *
+     * @param map
+     * @return
+     */
+    public static <T1, T2> List<Tuple2<T1, T2>> flatten(Map<T1, T2> map) {
+        ArrayList<Tuple2<T1, T2>> result = new ArrayList<Tuple2<T1, T2>>(map.size());
+
+        for (Map.Entry<T1, T2> entry : map.entrySet()) result.add(convert(entry));
+
+        return result;
+    }
+
+
     /**
      * Builds a map from a collection of tuples, utilizes the size() method
      *
