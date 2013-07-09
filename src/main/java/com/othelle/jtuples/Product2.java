@@ -26,6 +26,8 @@ package com.othelle.jtuples;
  * =============================================================================
  */
 public class Product2<T1, T2> extends Product implements Tuple2<T1, T2>{
+    private static final long serialVersionUID = -1187955276020306879L;
+
     private T1 v1;
     private T2 v2;
 

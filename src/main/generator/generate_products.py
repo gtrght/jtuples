@@ -5,6 +5,7 @@ max_products = 16
 package = "package com.othelle.jtuples;"
 class_begin = "public class Product{0}<{1}> extends Product implements Tuple{0}<{1}>"
 o_bracket = "{"
+serial_version_uid = "    private static final long serialVersionUID = -1187955276020306879L;\n"
 c_bracket = "}"
 iob_exception_block = "\n            default:\n                throw new IndexOutOfBoundsException(\"Index is out of range: \" + index);"
 case_block = "\n            case {0}:\n                return v{1};"
@@ -44,13 +45,15 @@ def generate_methods(number):
 if __name__ == '__main__':
     license_header = open('license_header.txt', 'rb').read()
     for arity in xrange(1, max_products + 1):
-        writer = open('../java/org/jtuples/Product{0}.java'.format(arity), "wb")
+        writer = open('../java/com/othelle/jtuples/Product{0}.java'.format(arity), "wb")
 
         writer.write(package)
         writer.write("\n\n")
         writer.write(license_header)
 
         writer.write(class_begin.format(arity, generate_types(arity)) + o_bracket)
+        writer.write("\n")
+        writer.write(serial_version_uid)
         writer.write("\n")
         writer.write(generate_fields(arity))
 

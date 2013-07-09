@@ -20,12 +20,13 @@
 
 package com.othelle.jtuples;
 
+import java.io.Serializable;
 import java.util.Iterator;
 
 /**
  * author: v.vlasov
  */
-public abstract class Product implements Iterable {
+public abstract class Product implements Iterable, Serializable {
     public static final int[] primes = {17, 31, 47, 67, 83, 103, 127, 149, 167, 191, 23, 41, 59, 73, 97, 109, 137, 157, 179, 197, 151};
     protected int arity;
 
