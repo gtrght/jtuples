@@ -3,6 +3,8 @@ package com.othelle.jtuples;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 import static com.othelle.jtuples.Tuples.convert;
 import static com.othelle.jtuples.Tuples.tuple;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -42,8 +44,14 @@ public class TuplesTest {
 
     @Test
     public void testConvert() {
-        Tuple tuple = convert(new String[]{"1", "2", "3"}, 2);
+        Tuple tuple = convert(Arrays.asList("1", "2", "3"));
+        assertThat(tuple, equalTo((Object) tuple("1", "2", "3")));
 
+        tuple = convert(new String[]{"1", "2", "3"});
+        assertThat(tuple, equalTo((Object) tuple("1", "2", "3")));
+
+        //the number of items to use from a collection or array can be specified
+        tuple = convert(new String[]{"1", "2", "3"}, 2);
         assertThat(tuple, equalTo((Object) tuple("1", "2")));
     }
 

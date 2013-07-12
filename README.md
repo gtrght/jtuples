@@ -1,10 +1,9 @@
 # JTuples Java library
 
-The main idea of this project is to provide a collection of immutable tuple objects that can be used with no extra tuning. However there are some way to make your own implementations and re-use the functionallity of util classes. 
+The main idea of this project is to provide a collection of immutable tuple objects that can be used with no extra tuning. However there are some way to make your own implementations and re-use the functionallity of util classes. Tuple is a serializable object. Since Tuple[N] extends Tuple[N-1] the method that return Tuple[N-1] can be changed to return Tuple[N] with no need to change client code.
 
 ## Maven repository (Ivy dependency)
-This section will describe how to use sonatype repository server to get an artifact using maven and ivy
-
+This section will describe how to setup jtuples using sonatype repository.
 
 ## Sample usage
 The library contains a set of interfaces which are named pretty straight-forward. Instead of Unit, Pair, Triplet... Sixtet... there are Tuple1, Tuple2 and up to Tuple 16. The main idea is to keep tuples as an interfaces to allow end-user to define their own implementations different from com.othelle.jtuples.Product
@@ -50,7 +49,7 @@ assertThat(map.get(tuple(null, null)), Matchers.equalTo("res3"));
 
 There are number of simple but very useful methods provided
 
-### map(List<Tuple>) : Map
+### MapUtils.map(List<Tuple>) : Map
 There are a number of methods to convert a list of tuples into a map. The most common case is to convert a list of Tuple2 (KeyValue pair) to map. Since this is the most popular ways there is an option available to preserve on original order (e.g. use LinkedHashMap)
 
 ```Java
@@ -75,7 +74,7 @@ assertThat(map.entrySet(), Matchers.hasSize(2));
 assertThat(map.get(1), Matchers.equalTo(tuple("1", "value1")));
 ```
 
-### flatten(Map<T1, T2>) : List<Tuple2<T1, T2>>
+### MapUtils.flatten(Map<T1, T2>) : List<Tuple2<T1, T2>>
 
 There is a method 'flatten(Map)' to unwind entries into a list tuples: 
 
@@ -92,9 +91,28 @@ assertThat(list.get(1), Matchers.equalTo(tuple("key2", 2)));
 ```
 
 
-### zip(List<T1>, List<T2> ... List<TN>): List<TupleN<T1, T2 ... TN>
+### ZipUtils.zip(List<T1>, List<T2> ... List<TN>): List<TupleN<T1, T2 ... TN>
 
 ```Java
 List<Tuple3<Integer, Integer, Integer>> ziped = ZipUtils.zip(asList(1, 2, 3), asList(2, 3, 1), asList(3, 1, 2));
 assertThat(ziped.get(2), equalTo(tuple(3, 1, 2)));
+```
+
+
+### Tuples.convert() : Tuple
+
+There is a method 'convert()' in a Tuples class. It can be utilized to create a tuple either from a list or from an array. You get a general Tuple which should be cast to a required type explicitly.
+
+```Java
+import static com.othelle.jtuples.Tuples.convert;
+
+Tuple tuple = convert(Arrays.asList("1", "2", "3"));
+assertThat(tuple, equalTo((Object) tuple("1", "2", "3")));
+
+tuple = convert(new String[]{"1", "2", "3"});
+assertThat(tuple, equalTo((Object) tuple("1", "2", "3")));
+
+//the number of items to use from a collection or array can be specified
+tuple = convert(new String[]{"1", "2", "3"}, 2);
+assertThat(tuple, equalTo((Object) tuple("1", "2")));
 ```
