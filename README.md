@@ -58,7 +58,7 @@ assertThat(map.get(tuple(null, null)), Matchers.equalTo("res3"));
 
 There are number of simple but very useful methods provided
 
-### MapUtils.map(List&lt;Tuple&gt;) : Map
+#### MapUtils.map(List&lt;Tuple&gt;) : Map
 There are a number of methods to convert a list of tuples into a map. The most common case is to convert a list of Tuple2 (KeyValue pair) to map. Since this is the most popular ways there is an option available to preserve on original order (e.g. use LinkedHashMap)
 
 ```Java
@@ -83,7 +83,7 @@ assertThat(map.entrySet(), Matchers.hasSize(2));
 assertThat(map.get(1), Matchers.equalTo(tuple("1", "value1")));
 ```
 
-### MapUtils.flatten(Map&lt;T1, T2>) : List&lt;Tuple2&lt;T1, T2>>
+#### MapUtils.flatten(Map&lt;T1, T2>) : List&lt;Tuple2&lt;T1, T2>>
 
 There is a method 'flatten(Map)' to unwind entries into a list tuples: 
 
@@ -100,7 +100,7 @@ assertThat(list.get(1), Matchers.equalTo(tuple("key2", 2)));
 ```
 
 
-### ZipUtils.zip(List&lt;T1>, List&lt;T2> ... List&lt;TN>): List&lt;TupleN&lt;T1, T2 ... TN>
+#### ZipUtils.zip(List&lt;T1>, List&lt;T2> ... List&lt;TN>): List&lt;TupleN&lt;T1, T2 ... TN>
 
 ```Java
 List<Tuple3<Integer, Integer, Integer>> ziped = ZipUtils.zip(asList(1, 2, 3), asList(2, 3, 1), asList(3, 1, 2));
@@ -108,7 +108,7 @@ assertThat(ziped.get(2), equalTo(tuple(3, 1, 2)));
 ```
 
 
-### Tuples.convert() : Tuple
+#### Tuples.convert() : Tuple
 
 There is a method 'convert()' in a Tuples class. It can be utilized to create a tuple either from a list or from an array. You get a general Tuple which should be cast to a required type explicitly.
 
