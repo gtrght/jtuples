@@ -1,7 +1,9 @@
 # JTuples Java library
 
 The main idea of this project is to provide a collection of immutable tuple objects that can be used with no extra tuning. However there are some way to make your own implementations and re-use the functionallity of util classes. Tuple is a serializable object. Since Tuple[N] extends Tuple[N-1] the method that return Tuple[N-1] can be changed to return Tuple[N] with no need to change client code.
-The library contains a set of interfaces which are named pretty straight-forward. Instead of Unit, Pair, Triplet... Sixtet... there are Tuple1, Tuple2, Tuple3 and so on up to Tuple 16. The main idea is to keep tuples as an interfaces to allow end-user to define their own implementations different from com.othelle.jtuples.Product
+
+The library contains a set of interfaces which are named pretty straight-forward. Instead of Unit, Pair, Triplet... Sixtet... there are Tuple1, Tuple2, Tuple3 and so on up to Tuple 16.
+The idea is to keep tuples as an interfaces to allow end-user to define their own implementations different from com.othelle.jtuples.Product
 
 
 ## Maven repository (Ivy dependency)
