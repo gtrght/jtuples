@@ -13,15 +13,14 @@ To reduce the amount of code needed to create a tuple you just use Tuples.tuple(
 
 Instead of 
 
-'''Java
+```Java
 Tuple2<Integer, Integer> item = new Tuple2<Integer, Integer>(1, 2);
-'''
+```
 
 
-'''Java
+```Java
 import static com.othelle.jtuples.Tuples.tuple;
 
 ...
 Tuple2<Integer, Integer> item = tuple(1, 2); 
-
-'''
+```
