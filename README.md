@@ -74,7 +74,7 @@ assertThat(map.entrySet(), Matchers.hasSize(2));
 assertThat(map.get(1), Matchers.equalTo(tuple("1", "value1")));
 ```
 
-### MapUtils.flatten(Map<T1, T2>) : List<Tuple2<T1, T2>>
+### MapUtils.flatten(Map&lt;T1, T2>) : List&lt;Tuple2&lt;T1, T2>>
 
 There is a method 'flatten(Map)' to unwind entries into a list tuples: 
 
@@ -91,7 +91,7 @@ assertThat(list.get(1), Matchers.equalTo(tuple("key2", 2)));
 ```
 
 
-### ZipUtils.zip(List<T1>, List<T2> ... List<TN>): List<TupleN<T1, T2 ... TN>
+### ZipUtils.zip(List&lt;T1>, List&lt;T2> ... List&lt;TN>): List&lt;TupleN&lt;T1, T2 ... TN>
 
 ```Java
 List<Tuple3<Integer, Integer, Integer>> ziped = ZipUtils.zip(asList(1, 2, 3), asList(2, 3, 1), asList(3, 1, 2));
