@@ -29,7 +29,7 @@ public class MapUtilsTest {
 
     @Test
     public void testMapPutRetrieve() {
-        Map<Integer, Tuple2<String, String>> map = MapUtils.map3(Arrays.asList(tuple(1, "1", "value1"), tuple(1, "2", "value2")));
+        Map<Integer, Tuple2<String, String>> map = MapUtils.map3(Arrays.asList(tuple(1, "1", "value1"), tuple(2, "2", "value2")));
         assertThat(map.entrySet(), Matchers.hasSize(2));
         assertThat(map.get(1), Matchers.equalTo(tuple("1", "value1")));
     }
