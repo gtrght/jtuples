@@ -29,8 +29,8 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git@github.com:vasilyvlasov/jtuples.git</connection>
-        <developerConnection>scm:git:git@github.com:vasilyvlasov/jtuples.git</developerConnection>
+        <connection>scm:git:https://github.com/vasilyvlasov/jtuples.git</connection>
+        <developerConnection>scm:git:https://github.com/vasilyvlasov/jtuples.git</developerConnection>
         <url>https://github.com/vasilyvlasov/jtuples.git</url>
     </scm>
 
