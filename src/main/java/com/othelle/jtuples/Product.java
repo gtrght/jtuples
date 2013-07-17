@@ -21,12 +21,14 @@
 package com.othelle.jtuples;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * author: v.vlasov
  */
-public abstract class Product implements Iterable, Serializable {
+public abstract class Product implements Tuple, Iterable, Serializable {
     public static final int[] primes = {17, 31, 47, 67, 83, 103, 127, 149, 167, 191, 23, 41, 59, 73, 97, 109, 137, 157, 179, 197, 151};
     protected int arity;
 
@@ -118,5 +120,39 @@ public abstract class Product implements Iterable, Serializable {
 
     public int getArity() {
         return arity;
+    }
+
+    @Override
+    public Object[] toArray() {
+        Object[] result = new Object[getArity()];
+
+        for (int i = 0; i < result.length; i++)
+            result[i] = getElement(i);
+        return result;
+
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public <T> T[] toArray(Class<T> clazz) {
+        T[] result = (T[]) java.lang.reflect.Array.newInstance(clazz, getArity());
+
+        for (int i = 0; i < result.length; i++)
+            result[i] = (T) getElement(i);
+        return result;
+    }
+
+    @Override
+    public List toList() {
+        return toList(Object.class);
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public <T> List<T> toList(Class<T> clazz) {
+        ArrayList<T> list = new ArrayList<T>(getArity());
+        for (Object o : this)
+            list.add((T) o);
+        return list;
     }
 }

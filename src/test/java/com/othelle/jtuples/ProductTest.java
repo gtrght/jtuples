@@ -19,8 +19,11 @@
  */
 package com.othelle.jtuples;
 
+import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
@@ -32,7 +35,7 @@ import static org.hamcrest.Matchers.not;
 public class ProductTest {
 
     @Before
-    public void setup(){
+    public void setup() {
 //        System.out.println(Product.primes.length);
     }
 
@@ -79,4 +82,32 @@ public class ProductTest {
                 equalTo(new SampleProduct3<Integer, String, Integer>(1, "test", 12).hashCode()));
     }
 
+
+    @Test
+    public void testAsArray() {
+        Tuple4 tuple = Tuples.tuple("1", "2", "3", "4");
+        Object[] objects = tuple.toArray();
+
+        assertThat(objects.length, Matchers.equalTo(tuple.getArity()));
+        assertThat(Tuples.convert(objects), Matchers.equalTo((Tuple) tuple));
+
+        String[] strings = tuple.toArray(String.class);
+
+        assertThat(strings.length, Matchers.equalTo(tuple.getArity()));
+        assertThat(Tuples.convert(strings), Matchers.equalTo((Tuple) tuple));
+    }
+
+    @Test
+    public void asArray() {
+        Tuple4 tuple = Tuples.tuple("1", "2", "3", "4");
+        List objects = tuple.toList();
+
+        assertThat(objects.size(), Matchers.equalTo(tuple.getArity()));
+        assertThat(Tuples.convert(objects), Matchers.equalTo((Tuple) tuple));
+
+        List<String> strings = tuple.toList(String.class);
+
+        assertThat(strings.size(), Matchers.equalTo(tuple.getArity()));
+        assertThat(Tuples.convert(strings), Matchers.equalTo((Tuple) tuple));
+    }
 }
