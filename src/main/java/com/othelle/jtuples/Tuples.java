@@ -96,55 +96,11 @@ public class Tuples {
         return tuple(entry.getKey(), entry.getValue());
     }
 
-    public static <T> Tuple convert(List<T> list) {
-        return convert(list, Math.min(list.size(), 16));
+    public static <T> UniProduct<T> convert(List<T> list) {
+        return new UniProduct<T>(list);
     }
 
-    public static <T> Tuple convert(List<T> list, int arity) {
-        return convert(list.toArray(new Object[list.size()]), arity);
-    }
-
-    public static <T> Tuple convert(T[] array) {
-        return convert(array, Math.min(array.length, 16));
-    }
-
-    @SuppressWarnings("unchecked")
-    public static <T> Tuple convert(T[] array, int arity) {
-        switch (arity){
-            case 1:
-                return new Product1(array[0]);
-            case 2:
-                return new Product2(array[0], array[1]);
-            case 3:
-                return new Product3(array[0], array[1], array[2]);
-            case 4:
-                return new Product4(array[0], array[1], array[2], array[3]);
-            case 5:
-                return new Product5(array[0], array[1], array[2], array[3], array[4]);
-            case 6:
-                return new Product6(array[0], array[1], array[2], array[3], array[4], array[5]);
-            case 7:
-                return new Product7(array[0], array[1], array[2], array[3], array[4], array[5], array[6]);
-            case 8:
-                return new Product8(array[0], array[1], array[2], array[3], array[4], array[5], array[6], array[7]);
-            case 9:
-                return new Product9(array[0], array[1], array[2], array[3], array[4], array[5], array[6], array[7], array[8]);
-            case 10:
-                return new Product10(array[0], array[1], array[2], array[3], array[4], array[5], array[6], array[7], array[8], array[9]);
-            case 11:
-                return new Product11(array[0], array[1], array[2], array[3], array[4], array[5], array[6], array[7], array[8], array[9], array[10]);
-            case 12:
-                return new Product12(array[0], array[1], array[2], array[3], array[4], array[5], array[6], array[7], array[8], array[9], array[10], array[11]);
-            case 13:
-                return new Product13(array[0], array[1], array[2], array[3], array[4], array[5], array[6], array[7], array[8], array[9], array[10], array[11], array[12]);
-            case 14:
-                return new Product14(array[0], array[1], array[2], array[3], array[4], array[5], array[6], array[7], array[8], array[9], array[10], array[11], array[12], array[13]);
-            case 15:
-                return new Product15(array[0], array[1], array[2], array[3], array[4], array[5], array[6], array[7], array[8], array[9], array[10], array[11], array[12], array[13], array[14]);
-            case 16:
-                return new Product16(array[0], array[1], array[2], array[3], array[4], array[5], array[6], array[7], array[8], array[9], array[10], array[11], array[12], array[13], array[14], array[15]);
-            default:
-                throw new IllegalArgumentException("Unsupported arity provided: " + arity + ". Must be between 1 and 16.");
-        }
+    public static <T> UniProduct<T> convert(T[] array) {
+        return new UniProduct<T>(array);
     }
 }

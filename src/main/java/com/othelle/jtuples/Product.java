@@ -40,7 +40,7 @@ public abstract class Product implements Tuple, Iterable, Serializable {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof Product) {
+        if (obj instanceof Tuple) {
             Product candidate = (Product) obj;
             if (candidate.arity != arity) return false; //for now it's inappropriate to compare two products with different arity.
 

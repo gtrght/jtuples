@@ -98,7 +98,7 @@ public class ProductTest {
     }
 
     @Test
-    public void asArray() {
+    public void testAsList() {
         Tuple4 tuple = Tuples.tuple("1", "2", "3", "4");
         List objects = tuple.toList();
 

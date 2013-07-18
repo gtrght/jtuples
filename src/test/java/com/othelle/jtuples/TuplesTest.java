@@ -51,8 +51,9 @@ public class TuplesTest {
         assertThat(tuple, equalTo((Object) tuple("1", "2", "3")));
 
         //the number of items to use from a collection or array can be specified
-        tuple = convert(new String[]{"1", "2", "3"}, 2);
-        assertThat(tuple, equalTo((Object) tuple("1", "2")));
+        tuple = convert(new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "1", "2", "3", "4", "5", "6",
+                "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"});
+        assertThat(tuple, equalTo((Object) tuple("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16")));
     }
 
 }

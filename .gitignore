@@ -9,3 +9,4 @@ target
 *.ear
 
 release.properties
+src/main/generator
