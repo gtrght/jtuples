@@ -277,4 +277,182 @@ public class MapUtils {
         }
         return map;
     }
+
+    /**
+     * Constructs a map from a given keyValues
+     *
+     * @param keyValues
+     * @return map build from an array of tuples
+     */
+    public static <T1, T2> Map<T1, Tuple1<T2>> map(Tuple2<T1, T2>... keyValues) {
+        return map2(Arrays.asList(keyValues));
+    }
+
+
+    /**
+     * Constructs a map from a given keyValues
+     *
+     * @param keyValues
+     * @return map build from an array of tuples
+     */
+    public static <T1, T2, T3> Map<T1, Tuple2<T2, T3>> map(Tuple3<T1, T2, T3>... keyValues) {
+        return map3(Arrays.asList(keyValues));
+    }
+
+
+    /**
+     * Constructs a map from a given keyValues
+     *
+     * @param keyValues
+     * @return map build from an array of tuples
+     */
+    public static <T1, T2, T3, T4> Map<T1, Tuple3<T2, T3, T4>> map(Tuple4<T1, T2, T3, T4>... keyValues) {
+        return map4(Arrays.asList(keyValues));
+    }
+
+
+    /**
+     * Constructs a map from a given keyValues
+     *
+     * @param keyValues
+     * @return map build from an array of tuples
+     */
+    public static <T1, T2, T3, T4, T5> Map<T1, Tuple4<T2, T3, T4, T5>> map(Tuple5<T1, T2, T3, T4, T5>... keyValues) {
+        return map5(Arrays.asList(keyValues));
+    }
+
+
+    /**
+     * Constructs a map from a given keyValues
+     *
+     * @param keyValues
+     * @return map build from an array of tuples
+     */
+    public static <T1, T2, T3, T4, T5, T6> Map<T1, Tuple5<T2, T3, T4, T5, T6>> map(Tuple6<T1, T2, T3, T4, T5, T6>... keyValues) {
+        return map6(Arrays.asList(keyValues));
+    }
+
+
+    /**
+     * Constructs a map from a given keyValues
+     *
+     * @param keyValues
+     * @return map build from an array of tuples
+     */
+    public static <T1, T2, T3, T4, T5, T6, T7> Map<T1, Tuple6<T2, T3, T4, T5, T6, T7>> map(Tuple7<T1, T2, T3, T4, T5, T6, T7>... keyValues) {
+        return map7(Arrays.asList(keyValues));
+    }
+
+
+    /**
+     * Constructs a map from a given keyValues
+     *
+     * @param keyValues
+     * @return map build from an array of tuples
+     */
+    public static <T1, T2, T3, T4, T5, T6, T7, T8> Map<T1, Tuple7<T2, T3, T4, T5, T6, T7, T8>> map(Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>... keyValues) {
+        return map8(Arrays.asList(keyValues));
+    }
+
+
+    /**
+     * Constructs a map from a given keyValues
+     *
+     * @param keyValues
+     * @return map build from an array of tuples
+     */
+    public static <T1, T2, T3, T4, T5, T6, T7, T8, T9> Map<T1, Tuple8<T2, T3, T4, T5, T6, T7, T8, T9>> map(Tuple9<T1, T2, T3, T4, T5, T6, T7, T8, T9>... keyValues) {
+        return map9(Arrays.asList(keyValues));
+    }
+
+
+    /**
+     * Constructs a map from a given keyValues
+     *
+     * @param keyValues
+     * @return map build from an array of tuples
+     */
+    public static <T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> Map<T1, Tuple9<T2, T3, T4, T5, T6, T7, T8, T9, T10>> map(Tuple10<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>... keyValues) {
+        return map10(Arrays.asList(keyValues));
+    }
+
+
+    /**
+     * Constructs a map from a given keyValues
+     *
+     * @param keyValues
+     * @return map build from an array of tuples
+     */
+    public static <T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Map<T1, Tuple10<T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>> map(Tuple11<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>... keyValues) {
+        return map11(Arrays.asList(keyValues));
+    }
+
+
+    /**
+     * Constructs a map from a given keyValues
+     *
+     * @param keyValues
+     * @return map build from an array of tuples
+     */
+    public static <T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Map<T1, Tuple11<T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>> map(Tuple12<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>... keyValues) {
+        return map12(Arrays.asList(keyValues));
+    }
+
+
+    /**
+     * Constructs a map from a given keyValues
+     *
+     * @param keyValues
+     * @return map build from an array of tuples
+     */
+    public static <T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> Map<T1, Tuple12<T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>> map(Tuple13<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>... keyValues) {
+        return map13(Arrays.asList(keyValues));
+    }
+
+
+    /**
+     * Constructs a map from a given keyValues
+     *
+     * @param keyValues
+     * @return map build from an array of tuples
+     */
+    public static <T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> Map<T1, Tuple13<T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>> map(Tuple14<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>... keyValues) {
+        return map14(Arrays.asList(keyValues));
+    }
+
+
+    /**
+     * Constructs a map from a given keyValues
+     *
+     * @param keyValues
+     * @return map build from an array of tuples
+     */
+    public static <T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> Map<T1, Tuple14<T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>> map(Tuple15<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>... keyValues) {
+        return map15(Arrays.asList(keyValues));
+    }
+
+
+    /**
+     * Constructs a map from a given list of Tuple16, considering each first element as a key and the rest as a value Tuple15
+     *
+     * @param keyValues
+     * @return a map
+     */
+    public static <T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> Map<T1, Tuple15<T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>> map16(Iterable<Tuple16<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>> keyValues) {
+        Map<T1, Tuple15<T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>> map = new HashMap<T1, Tuple15<T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>>();
+        for (Tuple16<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> keyValue : keyValues) {
+            map.put(keyValue._1(), tuple(keyValue._2(), keyValue._3(), keyValue._4(), keyValue._5(), keyValue._6(), keyValue._7(), keyValue._8(), keyValue._9(), keyValue._10(), keyValue._11(), keyValue._12(), keyValue._13(), keyValue._14(), keyValue._15(), keyValue._16()));
+        }
+        return map;
+    }
+
+    /**
+     * Constructs a map from a given keyValues
+     *
+     * @param keyValues
+     * @return map build from an array of tuples
+     */
+    public static <T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> Map<T1, Tuple15<T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>> map(Tuple16<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>... keyValues) {
+        return map16(Arrays.asList(keyValues));
+    }
 }

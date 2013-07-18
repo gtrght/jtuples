@@ -6,9 +6,41 @@ The library contains a set of interfaces which are named pretty straight-forward
 The idea is to keep tuples as an interfaces to allow end-user to define their own implementations different from com.othelle.jtuples.Product
 
 
-## Maven repository (Ivy dependency)
-This section describes how to setup jtuples using sonatype repository.
-TODO: add instructions
+## Maven repository
+
+The releases are available in central maven repository.
+
+
+```Xml
+<dependency>
+    <groupId>com.othelle.jtuples</groupId>
+    <artifactId>jtuples</artifactId>
+    <version>0.1.1</version>
+</dependency>
+```
+
+If you want to access SNAPSHOTS make sure you've added Sonatype Public as a repository
+```Xml
+	<dependency>
+	    <groupId>com.othelle.jtuples</groupId>
+	    <artifactId>jtuples</artifactId>
+	    <version>0.1.2-SNAPSHOT</version>
+	</dependency>
+
+    <repositories>
+        <repository>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>maven-sonatype</id>
+            <name>Sonatype Public Central</name>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
+        </repository>
+    </repositories>
+```
 
 ## How to use
 To reduce the amount of code needed to create a tuple you just use Tuples.tuple(...) method like this. 

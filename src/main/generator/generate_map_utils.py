@@ -6,7 +6,7 @@ package = "package com.othelle.jtuples;"
 
 if __name__ == '__main__':
     template = open('MapUtils.java', 'rb').read()
-    for arity in xrange(2, gp.max_products): #gp.max_products + 1):
+    for arity in xrange(gp.max_products, gp.max_products + 1): #gp.max_products + 1):
         code = template
         # writer = open('../java/org/jtuples/IValue{0}.java'.format(arity), "wb")
 
