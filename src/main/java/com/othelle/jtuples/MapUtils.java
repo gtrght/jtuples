@@ -284,8 +284,8 @@ public class MapUtils {
      * @param keyValues
      * @return map build from an array of tuples
      */
-    public static <T1, T2> Map<T1, Tuple1<T2>> map(Tuple2<T1, T2>... keyValues) {
-        return map2(Arrays.asList(keyValues));
+    public static <T1, T2> Map<T1, T2> map(Tuple2<T1, T2>... keyValues) {
+        return map(Arrays.asList(keyValues));
     }
 
 
