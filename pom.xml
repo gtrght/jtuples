@@ -101,7 +101,7 @@
         <profile>
             <id>release</id>
             <properties>
-                <jackson-scope>runtime</jackson-scope>
+                <jackson-scope>provided</jackson-scope>
             </properties>
         </profile>
     </profiles>

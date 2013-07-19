@@ -26,6 +26,6 @@ package com.othelle.jtuples;
  * =============================================================================
  */
 
-public interface Tuple1<T1> extends Tuple{
+public interface Tuple1<T1> extends Tuple {
     T1 _1();
 }

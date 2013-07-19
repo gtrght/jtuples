@@ -30,7 +30,7 @@ package com.othelle.jtuples;
 import org.codehaus.jackson.annotate.JsonCreator;
 import org.codehaus.jackson.annotate.JsonProperty;
 
-public class Product6<T1, T2, T3, T4, T5, T6> extends Product implements Tuple6<T1, T2, T3, T4, T5, T6>{
+public class Product6<T1, T2, T3, T4, T5, T6> extends Product implements Tuple6<T1, T2, T3, T4, T5, T6> {
     private static final long serialVersionUID = -1187955276020306879L;
 
     private T1 v1;
@@ -41,7 +41,7 @@ public class Product6<T1, T2, T3, T4, T5, T6> extends Product implements Tuple6<
     private T6 v6;
 
     @JsonCreator
-    public Product6(@JsonProperty("_1") T1 v1, @JsonProperty("_2") T2 v2, @JsonProperty("_3") T3 v3, @JsonProperty("_4") T4 v4, @JsonProperty("_5") T5 v5, @JsonProperty("_6") T6 v6){
+    public Product6(@JsonProperty("_1") T1 v1, @JsonProperty("_2") T2 v2, @JsonProperty("_3") T3 v3, @JsonProperty("_4") T4 v4, @JsonProperty("_5") T5 v5, @JsonProperty("_6") T6 v6) {
         this.v1 = v1;
         this.v2 = v2;
         this.v3 = v3;
@@ -51,8 +51,8 @@ public class Product6<T1, T2, T3, T4, T5, T6> extends Product implements Tuple6<
         this.arity = 6;
     }
 
-    public Object getElement(int index){
-        switch(index){
+    public Object getElement(int index) {
+        switch (index) {
             case 0:
                 return v1;
             case 1:
@@ -69,6 +69,7 @@ public class Product6<T1, T2, T3, T4, T5, T6> extends Product implements Tuple6<
                 throw new IndexOutOfBoundsException("Index is out of range: " + index);
         }
     }
+
     @JsonProperty("_1")
     public T1 _1() {
         return v1;
@@ -97,4 +98,5 @@ public class Product6<T1, T2, T3, T4, T5, T6> extends Product implements Tuple6<
     @JsonProperty("_6")
     public T6 _6() {
         return v6;
-    }}
+    }
+}

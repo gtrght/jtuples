@@ -24,8 +24,8 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-import static java.lang.Math.max;
 import static com.othelle.jtuples.Tuples.tuple;
+import static java.lang.Math.max;
 
 /**
  * author: v.vlasov

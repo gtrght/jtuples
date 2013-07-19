@@ -3,7 +3,6 @@ package com.othelle.jtuples.serialize;
 import com.othelle.jtuples.*;
 import org.codehaus.jackson.Version;
 import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.codehaus.jackson.map.module.SimpleAbstractTypeResolver;
 import org.codehaus.jackson.map.module.SimpleKeyDeserializers;
 import org.codehaus.jackson.map.module.SimpleModule;

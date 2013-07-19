@@ -30,7 +30,7 @@ package com.othelle.jtuples;
 import org.codehaus.jackson.annotate.JsonCreator;
 import org.codehaus.jackson.annotate.JsonProperty;
 
-public class Product13<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> extends Product implements Tuple13<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>{
+public class Product13<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> extends Product implements Tuple13<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> {
     private static final long serialVersionUID = -1187955276020306879L;
 
     private T1 v1;
@@ -48,7 +48,7 @@ public class Product13<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> e
     private T13 v13;
 
     @JsonCreator
-    public Product13(@JsonProperty("_1") T1 v1, @JsonProperty("_2") T2 v2, @JsonProperty("_3") T3 v3, @JsonProperty("_4") T4 v4, @JsonProperty("_5") T5 v5, @JsonProperty("_6") T6 v6, @JsonProperty("_7") T7 v7, @JsonProperty("_8") T8 v8, @JsonProperty("_9") T9 v9, @JsonProperty("_10") T10 v10, @JsonProperty("_11") T11 v11, @JsonProperty("_12") T12 v12, @JsonProperty("_13") T13 v13){
+    public Product13(@JsonProperty("_1") T1 v1, @JsonProperty("_2") T2 v2, @JsonProperty("_3") T3 v3, @JsonProperty("_4") T4 v4, @JsonProperty("_5") T5 v5, @JsonProperty("_6") T6 v6, @JsonProperty("_7") T7 v7, @JsonProperty("_8") T8 v8, @JsonProperty("_9") T9 v9, @JsonProperty("_10") T10 v10, @JsonProperty("_11") T11 v11, @JsonProperty("_12") T12 v12, @JsonProperty("_13") T13 v13) {
         this.v1 = v1;
         this.v2 = v2;
         this.v3 = v3;
@@ -65,8 +65,8 @@ public class Product13<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> e
         this.arity = 13;
     }
 
-    public Object getElement(int index){
-        switch(index){
+    public Object getElement(int index) {
+        switch (index) {
             case 0:
                 return v1;
             case 1:
@@ -97,6 +97,7 @@ public class Product13<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> e
                 throw new IndexOutOfBoundsException("Index is out of range: " + index);
         }
     }
+
     @JsonProperty("_1")
     public T1 _1() {
         return v1;
@@ -160,4 +161,5 @@ public class Product13<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> e
     @JsonProperty("_13")
     public T13 _13() {
         return v13;
-    }}
+    }
+}
