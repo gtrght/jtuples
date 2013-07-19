@@ -4,12 +4,13 @@ max_products = 16
 
 package = "package com.othelle.jtuples;"
 class_begin = "public class Product{0}<{1}> extends Product implements Tuple{0}<{1}>"
+jackson_import = "\nimport org.codehaus.jackson.annotate.JsonCreator;\nimport org.codehaus.jackson.annotate.JsonProperty;\n"
 o_bracket = "{"
 serial_version_uid = "    private static final long serialVersionUID = -1187955276020306879L;\n"
 c_bracket = "}"
 iob_exception_block = "\n            default:\n                throw new IndexOutOfBoundsException(\"Index is out of range: \" + index);"
 case_block = "\n            case {0}:\n                return v{1};"
-method_block = "\n    public T{0} _{0}() [\n        return v{0};\n    ]"
+method_block = "\n    @JsonProperty(\"_{0}\")\n    public T{0} _{0}() [\n        return v{0};\n    ]"
 
 
 def generate_join(number, join_pattern, join_symbol, start=1):
@@ -25,9 +26,9 @@ def generate_fields(number):
 
 
 def generate_constructor(number):
-    return "    public Product{0}({1}){2}".format(number, generate_join(number, "T{0} v{0}", ", "),
-                                                  "{\n" + generate_join(number, "        this.v{0} = v{0};", "\n") +
-                                                  "\n        " + "this.arity = {0};".format(number)) + "\n    }"
+    return "    @JsonCreator\n    public Product{0}({1}){2}".format(number, generate_join(number, "@JsonProperty(\"_{0}\") T{0} v{0}", ", "),
+                                                                    "{\n" + generate_join(number, "        this.v{0} = v{0};", "\n") +
+                                                                    "\n        " + "this.arity = {0};".format(number)) + "\n    }"
 
 
 def generate_get_element(number):
@@ -45,11 +46,14 @@ def generate_methods(number):
 if __name__ == '__main__':
     license_header = open('license_header.txt', 'rb').read()
     for arity in xrange(1, max_products + 1):
-        writer = open('../java/com/othelle/jtuples/Product{0}.java'.format(arity), "wb")
+        writer = open('tmp/Product{0}.java'.format(arity), "wb")
 
         writer.write(package)
         writer.write("\n\n")
         writer.write(license_header)
+        writer.write("\n")
+        writer.write(jackson_import)
+        writer.write("\n")
 
         writer.write(class_begin.format(arity, generate_types(arity)) + o_bracket)
         writer.write("\n")

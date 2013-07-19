@@ -1,0 +1,8 @@
+    @Override
+    @SuppressWarnings("unchecked")
+    @JsonProperty("_{0}")
+    public T _{0}() [[
+        return (T) getElement({1});
+    ]]
+
+

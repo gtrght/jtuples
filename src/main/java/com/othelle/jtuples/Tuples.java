@@ -100,7 +100,7 @@ public class Tuples {
         return new UniProduct<T>(list);
     }
 
-    public static <T> UniProduct<T> convert(T[] array) {
+    public static <T> UniProduct<T> convert(T ... array) {
         return new UniProduct<T>(array);
     }
 }

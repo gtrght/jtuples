@@ -25,6 +25,11 @@ package com.othelle.jtuples;
  *   GENERATED CODE DO NOT EDIT
  * =============================================================================
  */
+
+
+import org.codehaus.jackson.annotate.JsonCreator;
+import org.codehaus.jackson.annotate.JsonProperty;
+
 public class Product7<T1, T2, T3, T4, T5, T6, T7> extends Product implements Tuple7<T1, T2, T3, T4, T5, T6, T7>{
     private static final long serialVersionUID = -1187955276020306879L;
 
@@ -36,7 +41,8 @@ public class Product7<T1, T2, T3, T4, T5, T6, T7> extends Product implements Tup
     private T6 v6;
     private T7 v7;
 
-    public Product7(T1 v1, T2 v2, T3 v3, T4 v4, T5 v5, T6 v6, T7 v7){
+    @JsonCreator
+    public Product7(@JsonProperty("_1") T1 v1, @JsonProperty("_2") T2 v2, @JsonProperty("_3") T3 v3, @JsonProperty("_4") T4 v4, @JsonProperty("_5") T5 v5, @JsonProperty("_6") T6 v6, @JsonProperty("_7") T7 v7){
         this.v1 = v1;
         this.v2 = v2;
         this.v3 = v3;
@@ -67,30 +73,37 @@ public class Product7<T1, T2, T3, T4, T5, T6, T7> extends Product implements Tup
                 throw new IndexOutOfBoundsException("Index is out of range: " + index);
         }
     }
+    @JsonProperty("_1")
     public T1 _1() {
         return v1;
     }
 
+    @JsonProperty("_2")
     public T2 _2() {
         return v2;
     }
 
+    @JsonProperty("_3")
     public T3 _3() {
         return v3;
     }
 
+    @JsonProperty("_4")
     public T4 _4() {
         return v4;
     }
 
+    @JsonProperty("_5")
     public T5 _5() {
         return v5;
     }
 
+    @JsonProperty("_6")
     public T6 _6() {
         return v6;
     }
 
+    @JsonProperty("_7")
     public T7 _7() {
         return v7;
     }}

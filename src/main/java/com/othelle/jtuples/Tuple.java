@@ -6,6 +6,7 @@ import java.util.List;
  * Base interface of all tuples. Contains general methods
  * author: v.vlasov
  */
+//@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "class")
 public interface Tuple extends Iterable {
     /**
      * Returns a number of elements in a tuple

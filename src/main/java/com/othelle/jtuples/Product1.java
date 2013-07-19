@@ -25,12 +25,18 @@ package com.othelle.jtuples;
  *   GENERATED CODE DO NOT EDIT
  * =============================================================================
  */
+
+
+import org.codehaus.jackson.annotate.JsonCreator;
+import org.codehaus.jackson.annotate.JsonProperty;
+
 public class Product1<T1> extends Product implements Tuple1<T1>{
     private static final long serialVersionUID = -1187955276020306879L;
 
     private T1 v1;
 
-    public Product1(T1 v1){
+    @JsonCreator
+    public Product1(@JsonProperty("_1") T1 v1){
         this.v1 = v1;
         this.arity = 1;
     }
@@ -43,6 +49,7 @@ public class Product1<T1> extends Product implements Tuple1<T1>{
                 throw new IndexOutOfBoundsException("Index is out of range: " + index);
         }
     }
+    @JsonProperty("_1")
     public T1 _1() {
         return v1;
     }}

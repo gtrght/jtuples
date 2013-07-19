@@ -1,5 +1,7 @@
 package com.othelle.jtuples;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -33,135 +35,133 @@ public class UniProduct<T> extends Product implements Tuple16<T, T, T, T, T, T, 
 
     @Override
     public Object getElement(int index) {
-        if (arity > index) return data.get(index);
-        throw new IndexOutOfBoundsException("Index is out of bounds: [0," + (getArity() - 1) + "], index: " + index);
+        return arity > index && index >= 0 ? data.get(index) : null;
     }
 
     @Override
     @SuppressWarnings("unchecked")
+    @JsonProperty("_1")
     public T _1() {
-        {
-            return (T) getElement(1);
-        }
+        return (T) getElement(0);
     }
+
 
     @Override
     @SuppressWarnings("unchecked")
+    @JsonProperty("_2")
     public T _2() {
-        {
-            return (T) getElement(2);
-        }
+        return (T) getElement(1);
     }
+
 
     @Override
     @SuppressWarnings("unchecked")
+    @JsonProperty("_3")
     public T _3() {
-        {
-            return (T) getElement(3);
-        }
+        return (T) getElement(2);
     }
+
 
     @Override
     @SuppressWarnings("unchecked")
+    @JsonProperty("_4")
     public T _4() {
-        {
-            return (T) getElement(4);
-        }
+        return (T) getElement(3);
     }
+
 
     @Override
     @SuppressWarnings("unchecked")
+    @JsonProperty("_5")
     public T _5() {
-        {
-            return (T) getElement(5);
-        }
+        return (T) getElement(4);
     }
+
 
     @Override
     @SuppressWarnings("unchecked")
+    @JsonProperty("_6")
     public T _6() {
-        {
-            return (T) getElement(6);
-        }
+        return (T) getElement(5);
     }
+
 
     @Override
     @SuppressWarnings("unchecked")
+    @JsonProperty("_7")
     public T _7() {
-        {
-            return (T) getElement(7);
-        }
+        return (T) getElement(6);
     }
+
 
     @Override
     @SuppressWarnings("unchecked")
+    @JsonProperty("_8")
     public T _8() {
-        {
-            return (T) getElement(8);
-        }
+        return (T) getElement(7);
     }
+
 
     @Override
     @SuppressWarnings("unchecked")
+    @JsonProperty("_9")
     public T _9() {
-        {
-            return (T) getElement(9);
-        }
+        return (T) getElement(8);
     }
+
 
     @Override
     @SuppressWarnings("unchecked")
+    @JsonProperty("_10")
     public T _10() {
-        {
-            return (T) getElement(10);
-        }
+        return (T) getElement(9);
     }
+
 
     @Override
     @SuppressWarnings("unchecked")
+    @JsonProperty("_11")
     public T _11() {
-        {
-            return (T) getElement(11);
-        }
+        return (T) getElement(10);
     }
+
 
     @Override
     @SuppressWarnings("unchecked")
+    @JsonProperty("_12")
     public T _12() {
-        {
-            return (T) getElement(12);
-        }
+        return (T) getElement(11);
     }
+
 
     @Override
     @SuppressWarnings("unchecked")
+    @JsonProperty("_13")
     public T _13() {
-        {
-            return (T) getElement(13);
-        }
+        return (T) getElement(12);
     }
+
 
     @Override
     @SuppressWarnings("unchecked")
+    @JsonProperty("_14")
     public T _14() {
-        {
-            return (T) getElement(14);
-        }
+        return (T) getElement(13);
     }
+
 
     @Override
     @SuppressWarnings("unchecked")
+    @JsonProperty("_15")
     public T _15() {
-        {
-            return (T) getElement(15);
-        }
+        return (T) getElement(14);
     }
+
 
     @Override
     @SuppressWarnings("unchecked")
+    @JsonProperty("_16")
     public T _16() {
-        {
-            return (T) getElement(16);
-        }
+        return (T) getElement(15);
     }
 }

@@ -25,7 +25,6 @@ package com.othelle.jtuples;
  *   GENERATED CODE DO NOT EDIT
  * =============================================================================
  */
-
 public interface Tuple2<T1, T2> extends Tuple1<T1> {
     T2 _2();
 }

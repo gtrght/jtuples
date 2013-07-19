@@ -20,6 +20,10 @@
 
 package com.othelle.jtuples;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -28,8 +32,11 @@ import java.util.List;
 /**
  * author: v.vlasov
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 public abstract class Product implements Tuple, Iterable, Serializable {
     public static final int[] primes = {17, 31, 47, 67, 83, 103, 127, 149, 167, 191, 23, 41, 59, 73, 97, 109, 137, 157, 179, 197, 151};
+    @JsonIgnore
     protected int arity;
 
     public abstract Object getElement(int index);
