@@ -1,0 +1,11 @@
+0.1.3
++ Fixed an issue with MapUtils.map(Tuple2 ... vararg)
++ Added support for Jackson (require 1.9.1+). Now able to serialize/deserialize Tuples with only an interface provided.
+
+0.1.2
++ Added Tuples.convert()
++ Added MapUtils.map(Tuple... vararg)
++ Added UniProduct.class
+
+0.1.1
++ Initial version of JTuples.
