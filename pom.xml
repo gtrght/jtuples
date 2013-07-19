@@ -34,6 +34,12 @@
         <url>https://github.com/vasilyvlasov/jtuples.git</url>
     </scm>
 
+    <issueManagement>
+        <!-- Feel free to post suggestions and feature requests -->
+        <system>GitHub Issues</system>
+        <url>https://github.com/vasilyvlasov/jtuples/issues</url>
+    </issueManagement>
+
     <developers>
         <developer>
             <id>v.vlasov</id>
