@@ -41,18 +41,18 @@ public class JacksonConverterTest {
     }
 
     @Test
-    public void testWorkWithDifferentTypes()           {
+    public void testWorkWithDifferentTypes() {
         assertSerializeDeserialize(tuple(1, "2", 3d), Tuple3.class);
     }
 
     @Test
     public void testSerializeLowerArity() {
         String serialized = converter.writeValueAsString(tuple(1, 2, 3));
-        assertThat(converter.readValue(serialized.getBytes(), Tuple2.class), Matchers.equalTo(tuple(1, 2)));
+        assertThat(converter.readValue(serialized.getBytes(), Tuple2.class), Matchers.equalTo((Tuple2) tuple(1, 2)));
     }
 
     @Test
-    public void serializeUniProduct(){
+    public void serializeUniProduct() {
         String serialized = converter.writeValueAsString(Tuples.convert("1", "2", "3"));
         Tuple4 deserialized = converter.readValue(serialized.getBytes(), Tuple4.class);
         assertThat(deserialized, Matchers.equalTo(tuple("1", "2", "3", null)));
