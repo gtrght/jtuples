@@ -1,8 +1,13 @@
+    private Object v{0};
+
     @Override
     @SuppressWarnings("unchecked")
     @JsonProperty("_{0}")
-    public T _{0}() [[
-        return (T) getElement({1});
+    public Object _{0}() [[
+        return v{0};
     ]]
 
+    private void set_{0}(Object value)[[
+        this.v{0} = value;
+    ]]
 
