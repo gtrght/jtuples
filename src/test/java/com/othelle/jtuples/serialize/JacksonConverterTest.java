@@ -55,7 +55,7 @@ public class JacksonConverterTest {
     public void serializeUniProduct() {
         String serialized = converter.writeValueAsString(Tuples.convert("1", "2", "3"));
         Tuple4 deserialized = converter.readValue(serialized.getBytes(), Tuple4.class);
-        assertThat(deserialized, Matchers.equalTo(tuple("1", "2", "3", null)));
+        assertThat(deserialized, Matchers.equalTo((Tuple4) tuple("1", "2", "3", null)));
     }
 
     private void assertSerializeDeserialize(Tuple tuple, Class<? extends Tuple> clazz) {
