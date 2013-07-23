@@ -15,7 +15,7 @@ The releases are available in central maven repository.
 <dependency>
     <groupId>com.othelle.jtuples</groupId>
     <artifactId>jtuples</artifactId>
-    <version>0.1.1</version>
+    <version>{latest.version}</version>
 </dependency>
 ```
 
@@ -24,7 +24,7 @@ If you want to access SNAPSHOTS make sure you've added Sonatype Public as a repo
 	<dependency>
 	    <groupId>com.othelle.jtuples</groupId>
 	    <artifactId>jtuples</artifactId>
-	    <version>0.1.2-SNAPSHOT</version>
+	    <version>{latest.snapshot.version}</version>
 	</dependency>
 
     <repositories>
