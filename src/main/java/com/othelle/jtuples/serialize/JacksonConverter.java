@@ -27,6 +27,14 @@ public class JacksonConverter implements Converter {
      */
     public static SimpleModule getTupleMapperModule() {
         SimpleModule module = new SimpleModule("1", Version.unknownVersion());
+        SimpleAbstractTypeResolver resolver = getTupleTypeResolver();
+        module.setAbstractTypes(resolver);
+
+        module.setKeyDeserializers(new SimpleKeyDeserializers());
+        return module;
+    }
+
+    private static SimpleAbstractTypeResolver getTupleTypeResolver() {
         SimpleAbstractTypeResolver resolver = new SimpleAbstractTypeResolver();
         resolver.addMapping(Tuple16.class, Product16.class);
         resolver.addMapping(Tuple15.class, Product15.class);
@@ -44,12 +52,10 @@ public class JacksonConverter implements Converter {
         resolver.addMapping(Tuple3.class, Product3.class);
         resolver.addMapping(Tuple2.class, Product2.class);
         resolver.addMapping(Tuple1.class, Product1.class);
-        module.setAbstractTypes(resolver);
-
-        module.setKeyDeserializers(new SimpleKeyDeserializers());
-        return module;
+        return resolver;
     }
 
+    @Override
     public String writeValueAsString(Object object) {
         try {
             return mapper.writeValueAsString(object);
@@ -58,6 +64,7 @@ public class JacksonConverter implements Converter {
         }
     }
 
+    @Override
     public byte[] writeValueAsBytes(Object object) {
         try {
             return mapper.writeValueAsBytes(object);
@@ -66,6 +73,7 @@ public class JacksonConverter implements Converter {
         }
     }
 
+    @Override
     public <T> T readValue(byte[] data, Class<T> clazz) {
         try {
             return mapper.readValue(data, clazz);
